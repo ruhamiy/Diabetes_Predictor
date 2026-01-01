@@ -1,0 +1,8 @@
+{
+  "short_name": "Diabetes Detector",
+  "name": "Diabetes Detector App",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

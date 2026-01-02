@@ -7,8 +7,8 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
-log_reg = joblib.load(BASE_DIR / "log_reg.pkl")
-dtree = joblib.load(BASE_DIR / "dtree.pkl")
+log_reg = joblib.load(BASE_DIR / "log_reg.joblib")
+dtree = joblib.load(BASE_DIR / "dtree.joblib")
 
 feature_file = BASE_DIR / "feature_columns.csv"
 with open(feature_file) as f:
@@ -16,7 +16,6 @@ with open(feature_file) as f:
 
 app = FastAPI(title="Diabetes Prediction Model")
 
-# ✅ Allow frontend (React) to talk to backend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # or ["http://localhost:3000", "http://localhost:3001"]
